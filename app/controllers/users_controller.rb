@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 before_filter :logged_in_user, :only => [:show, :edit]
+before_filter :correct_user, only: [:show, :edit]
 
   def show
    @user = User.find(params[:id])
