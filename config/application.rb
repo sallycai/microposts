@@ -1,3 +1,4 @@
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -33,4 +34,3 @@ module Microposts
       g.test_framework false
    end
  end
-
