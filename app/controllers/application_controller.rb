@@ -10,4 +10,13 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+  
+  def correct_user
+    @user = User.find(params[:id])
+    unless @user == current_user
+    flash[:danger] = "You do not have permission to view this page!"
+    redirect_to login_url 
+    end
+  end
 end
+
