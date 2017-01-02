@@ -1,0 +1,21 @@
+[33me53251c[m HEAD@{0}: reset: moving to HEAD
+[33me53251c[m HEAD@{1}: commit: Start 8.6
+[33ma68b658[m HEAD@{2}: commit: 8.5
+[33m1057184[m HEAD@{3}: commit (merge): Fixed conflict
+[33ma596492[m HEAD@{4}: reset: moving to HEAD
+[33ma596492[m HEAD@{5}: commit: Update static page
+[33m8f721e0[m HEAD@{6}: checkout: moving from user-profile to master
+[33m189b117[m HEAD@{7}: checkout: moving from master to user-profile
+[33m8f721e0[m HEAD@{8}: commit: Add controller
+[33m64a0d35[m HEAD@{9}: checkout: moving from user-profile to master
+[33m189b117[m HEAD@{10}: checkout: moving from master to user-profile
+[33m64a0d35[m HEAD@{11}: commit: micropost db
+[33m2d9e3b2[m HEAD@{12}: checkout: moving from user-profile to master
+[33m189b117[m HEAD@{13}: commit: Allow user edit
+[33md8e47d6[m HEAD@{14}: commit: User login and logout
+[33m2d9e3b2[m HEAD@{15}: checkout: moving from master to user-profile
+[33m2d9e3b2[m HEAD@{16}: commit: Add sign up and user detail
+[33m1a90730[m HEAD@{17}: commit: add user model
+[33ma674889[m HEAD@{18}: commit: Add top page
+[33mc412aa6[m HEAD@{19}: commit: add initial setups
+[33m81f5d3e[m HEAD@{20}: commit (initial): First commit
