@@ -7,6 +7,7 @@ before_filter :correct_user, only: [:edit]
    @microposts = @user.microposts.order(created_at: :desc)
    @followers = @user.follower_users.order(created_at: :desc)
    @following = @user.following_users.order(created_at: :desc)
+   
   end
   
   def new
@@ -44,7 +45,4 @@ before_filter :correct_user, only: [:edit]
     params.require(:user).permit(:name, :email, :password,
                                  :password_confirmation,:location)
   end
-  
-
 end
-
