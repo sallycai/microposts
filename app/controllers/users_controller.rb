@@ -1,13 +1,26 @@
 class UsersController < ApplicationController
-before_filter :logged_in_user, only: [:show, :edit]
+before_filter :logged_in_user, only: [:show, :edit, :followers, :followings]
 before_filter :correct_user, only: [:edit]
 
   def show
-   @user = User.find(params[:id])
-   @microposts = @user.microposts.order(created_at: :desc)
-   @followers = @user.follower_users.order(created_at: :desc)
-   @following = @user.following_users.order(created_at: :desc)
-   
+  @user = User.find(params[:id])
+  @microposts = @user.microposts.order(created_at: :desc)
+  @followers = @user.follower_users.order(created_at: :desc)
+  @followings = @user.following_users.order(created_at: :desc)
+  end
+  
+  def following
+    @user = User.find(params[:id])
+    @followings = user_following_url
+    @title = "Followings"
+    render 'show_follow'
+  end
+  
+    def followers
+    @user = User.find(params[:id])
+    @followers = user_following_url
+    @title = "Followers"
+    render 'show_follow'
   end
   
   def new
@@ -42,7 +55,10 @@ before_filter :correct_user, only: [:edit]
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password,
+    params.require(:user).permit(:id, :name, :email, :password,
                                  :password_confirmation,:location)
   end
+  
+
 end
+
