@@ -5,6 +5,8 @@ before_filter :correct_user, only: [:edit]
   def show
    @user = User.find(params[:id])
    @microposts = @user.microposts.order(created_at: :desc)
+   @followers = @user.follower_users.order(created_at: :desc)
+   @following = @user.following_users.order(created_at: :desc)
   end
   
   def new
