@@ -1,41 +1,41 @@
 class UsersController < ApplicationController
-before_filter :logged_in_user, :only => [:show, :edit]
-before_filter :correct_user, only: [:show, :edit]
+before_filter :logged_in_user, :only => [:show, :edit, :update]
+before_filter :correct_user, only: [:edit, :update]
 
-  def show
+def show
    @user = User.find(params[:id])
-  end
+end
   
-  def new
+def new
      @user = User.new
-  end
+end
 
-  def create
+def create
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      redirect_to login_url
     else 
       render 'new'
-    end
   end
+end
   
-  def edit
+def edit
     @user = User.find(params[:id])
-  end
+end
   
-   def update
-     @user = User.find params[:id]
-    if @user.update(user_params)
+def update
+  @user = User.find params[:id]
+  if @user.update(user_params)
       # 保存に成功した場合はトップページへリダイレクト
       redirect_to @user, notice: 'profileを編集しました'
     else
       # 保存に失敗した場合は編集画面へ戻す
       render 'edit'
-    end
-  end
+ end
+end
   
-  private
+private
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
