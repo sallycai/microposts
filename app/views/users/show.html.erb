@@ -8,8 +8,8 @@
  <%= @user.location %> <br>
  
   <%= link_to "Edit Profile" , edit_user_path(@user) if current_user == @user %><br>
-  <%= link_to "Followers:", user_followers_path(@followers) %> <%= @followers.count %> <%= @followers.ids  %> 
-<%= link_to "Followings:", user_following_path(@followings) %> <%= @followings.count %> <%= @followings.ids %></h1>
+  <%= link_to "Followers:", followers_user_path(@user) %> <%= @followers.count %> <%= @followers.ids  %> 
+<%= link_to "Followings:", following_user_path(@user) %> <%= @followings.count %> <%= @followings.ids %></h1>
   
     </section>
   </aside>
