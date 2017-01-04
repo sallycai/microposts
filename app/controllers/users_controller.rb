@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-before_filter :logged_in_user, only: [:show, :edit]
-before_filter :correct_user, only: [:edit]
+before_filter :logged_in_user, only: [:show, :edit, :update]
+before_filter :correct_user, only: [:edit, :update]
 
   def show
    @user = User.find(params[:id])
@@ -18,7 +18,7 @@ before_filter :correct_user, only: [:edit]
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
-      redirect_to @user
+      redirect_to login_url
     else 
       render 'new'
     end
