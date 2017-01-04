@@ -1,5 +1,5 @@
 <h3><%= @title %></h3>
-<% @user.each do |user| %>
-User Name: <%= user.name %>
-  <br>
+<div class="table-responsive"> <% @user.each do |user| %>
+<table class="table"><%= link_to gravatar_for(user, size: 30) %> <%= user.name %> </table>
 <% end %>
+</div>
