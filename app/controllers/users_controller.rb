@@ -4,7 +4,7 @@ before_filter :correct_user, only: [:edit]
 
   def show
   @user = User.find(params[:id])
-  @microposts = @user.microposts.order(created_at: :desc)
+  @microposts = @user.microposts.order(created_at: :desc).page(params[:page])
   @followers = @user.follower_users(@user).order(created_at: :desc)
   @followings = @user.following_users(@user).order(created_at: :desc)
   end
